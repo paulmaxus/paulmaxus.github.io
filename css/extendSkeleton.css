@@ -1,0 +1,48 @@
+
+h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1.title {
+  font-size: 4rem;
+  color:#4b81b4;
+  font-style: italic;
+}
+
+.container {
+  max-width: 800px; 
+}
+  
+.include {
+  padding-top: 7rem;
+}
+
+.docs-header {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  font-weight: 600; 
+}
+
+.docs-section {
+  padding: 2.5rem 0;
+  margin-bottom: 0;
+}
+    
+a {
+  text-decoration-line: none;
+}
+
+p.caption {
+  font-size: 70%;
+}
+
+#mygraph {
+   width: 500px;
+   height: 300px;
+   background-color: #EEFFFF;
+}
+
+#copyright {
+  font-size: 50%;
+}

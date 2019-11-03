@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <!-- Basic Page Needs
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8">
+        <meta name="description" content="This is the personal website of Max Paulus, computational linguist, hearing and ux researcher with interests in psychology and physiology">
+        <meta name="author" content="maximillian paulus">
+        <title>max paulus</title>
+      
+        <!-- Mobile Specific Metas
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/extendSkeleton.css">
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/site.js"></script>
+        <script src="js/play_voc.js"></script>
+        <script>
+         
+        </script>
+    </head>
+
+    <body>
+      
+      <div class="container">
+        
+        <div class="navbar-spacer"></div>
+        <div class="navbar">
+          <div class="container">
+            <ul class="navbar-list">
+              
+              <li class="navbar-item"><a class="navbar-link" href="#intro">intro</a></li>
+              
+              <li class="navbar-item"><a class="navbar-link" href="#research">research</a></li>
+              
+              <li class="navbar-item">
+                <a class="navbar-link" href="#nlp">Side Projects</a>
+                <!--<a class="navbar-link" href="#" data-popover="#codeNavPopover">Side Projects</a>
+                <div id="codeNavPopover" class="popover">
+                  <ul class="popover-list">
+                    
+                    <li class="popover-item">
+                      <a class="popover-link" href="#nlp">nlp</a>
+                    </li>
+                    
+                    <li class="popover-item">
+                      <a class="popover-link" href="#shiny">shiny</a>
+                    </li>
+                    
+                  </ul>
+                </div>-->
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class="include" id="intro">
+          
+<center>
+  <h1 class="title">Max Paulus</h1>
+  <h5>Speech and Hearing</h5>
+</center>
+
+<hr>
+
+<div class="row">
+    <div class="five columns">
+        <img class="u-max-full-width" src="img/ac2_orig.jpg">
+    </div>
+  <div class="seven columns">
+    <p>
+      I'm a researcher in Hearing Science and Technology with a background in NLP. I use physiological measures such as pupil dilation to understand how normal-hearing and hearing-impaired individuals process degraded speech. My aim is to improve assistive technologies based on my experimental findings.
+    </p>
+    <a target="_blank" href="https://www.linkedin.com/in/maximillian-paulus-739ba4142/">CV</a>
+    |
+    <a target="_blank" href="https://www.github.com/paulmaxus">Code</a>
+  </div>
+</div>
+
+<!--
+<hr>
+
+<center><h1>Curriculum Vitae</h1></center>
+
+<hr>
+
+<p>
+  <strong>2009-2014</strong>, I first studied Process Engineering and then <strong>Computational Linguistics</strong> with a minor in <strong>Computer Science</strong> (B.Sc) at Saarland University in Germany. I did an exchange semester at the <strong>University of Technology Sydney</strong> to study User interfaces, Databases and Web Systems.
+In the following years, I stayed at Saarland University, working as research assistant in the EEG lab and studying computational and experimental methods in the Neuroscience of Language (M.Sc). My thesis research was conducted at the <strong>Center of Mind and Brain Sciences</strong> in Rovereto, Italy.
+  I am currently employed by <strong>University College London (UCL)</strong>, funded by Marie Skłodowska-Curie Actions. More about our project can be found <a target="_blank" href="http://www.enrich-etn.eu/">here</a> and under the <a href="#research">research</a> section.
+</p>
+ -->
+
+<!--
+<hr>
+
+<figure>
+    <iframe width="100%" height="100" frameborder="0" allowfullscreen
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/353068943&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false">
+    </iframe>
+   <figcaption style="font-size:12px">Apart from my good old steel-string guitar, I enjoy creating Dance and Chillbeats
+    </figcaption>
+  </figure>
+-->
+
+<!--
+<center>
+  <figure>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/STOz4BhKjtU" frameborder="0" allowfullscreen>
+    </iframe>
+    <figcaption style="font-size:12px">This is an image video of my undergraduate program in Saarbrucken &#8209; featuring me without beard</figcaption>  
+  </figure>
+</center>
+-->
+        <!---->
+        </div>
+        
+        <div class="include" id="research">
+          <hr>
+<center><h1>Research</h1></center>
+<hr>
+
+<div class="docs-section">  
+  
+  <h6 id="current" class="docs-header">Listening effort</h6>
+  
+  <p>
+  I currently study how humans process degraded speech using physiological tests. For instance, changes in pupil size can indicate listening effort. We work directly with hearing impaired listeners or simulate hearing loss with signal processing techniques such as noise-vocoding. Noise-vocoding simulates cochlear implants (CIs) which convey only little spectral detail. That makes it hard to track pitch or melody. Hence, the perception of music is diminished. <b>Below, you can listen to examples from different music genres and speech, and switch between the natural sound and the CI simulation.</b> You may notice that rhythmic music (e.g., Hip Hop) is easier to listen to than classical music which depends mostly on melody.
+  </p>
+
+<!--
+<p>Check out <a href="#events">events</a> for progress updates.</p>
+-->
+
+<div class="row">
+  <div class="four columns">
+    <select class="u-full-width" id="genre" onchange="crlabel()">
+      <option value="speech">Speech</option>
+      <option value="piano">Classical</option>
+      <option value="rap">Hip Hop</option>
+      <option value="trance">Trance</option>
+      <option value="country">Country</option>
+    </select>
+  </div>
+  
+  <div class="four columns"> 
+    <button id="play" class="button" onclick="playAudio()">Play</button>
+    <button id="vocode" class="button" onclick="switcher()">Implant</button>
+  </div>
+  
+   <div class="four columns"> 
+    <div id="copyright">The Adventures of Pinocchio by Carlo Collodi, translated by Carol Della, read by Sherry Crowther; librivox.org</div>
+  </div>
+  
+</div>
+
+</div>
+
+My research is funded by
+<img class="u-max-full-width" src="img/enrich.png">
+
+<!--
+<center>
+  <audio controls style="1px">
+    <source src="audio/vocoded.wav" type="audio/wav">
+    your browser does not support the audio!
+    </audio>
+    <center><button onclick="displaySentence()"><b>Solution</b></button></center>
+    <br style="margin-bottom: 2em">
+    <p id="sentence"></p>
+</center>
+</div>
+-->
+
+<!--
+  <p>
+    How humans learn and adapt is an exciting research question. It is believed that learning follows a so called <strong>power-law</strong> function. When you start practicing, you will learn a lot in a short amount of time. But the better you get, the slower the progress.
+  </p>
+  
+  <div class="row">
+    <div class="twelve columns">
+    <div class="six columns offset-by-three">
+      <img class="u-max-full-width" src="img/power_law.png">
+    </div>
+    </div>
+  </div>
+  <p>
+  
+-->
+
+<!--
+<hr>
+
+<div class="docs-section">  
+  <h6 id="inter" class="docs-header">Covert visuo-spatial attention (Università di Trento)</h6>
+  <p>
+    In simple terms, we are exploring a method that can tell us where a person is looking without actually moving her eyes!
+    Specifically, we study two brain wave components that can be obtained from electrophysiological data (i.e., electrodes attached to the scalp). The electrodes are placed symmetrically on both sides of the parieto-occipital scalp so that activation patterns of each hemisphere can be compared. If the activation is stronger on one side, it is more likely that the opposite side is attended to (decussation). Our first experiment is documented in my <a target="_blank" href="docs/colloquium.pdf">thesis defense</a>.
+  </p>  
+</div>
+ 
+ -->
+        <!---->
+        </div>
+        
+        
+        
+        <div class="include" id="nlp">
+          <hr>
+<center><h1 id="nlp">Speech and Language Technology</h1></center>
+<hr>
+
+<div class="docs-section">
+  <h6 id="asr" class="docs-header">Speech recognition for low-resource languages</h6>
+   <p><a target="_blank" href="https://github.com/lex4all/lex4all">code</a> and <a target="_blank" href="http://www.anthology.aclweb.org/P/P14/P14-5.pdf#page=121">paper</a> published at ACL.
+  </p>
+  <p>Together with Anjana Vakil, I wrote a tool that allows speech recognition with only sparse data. The idea is that an existing high-resource recognition engine is used alongside a pronunciation lexicon, mapping words in the target language into sequences of sounds in the high-resource language.
+  </p>
+</div>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Lip-sync for virtual characters</h6>
+  <p>presentation <a target="_blank" href="https://docs.google.com/presentation/d/1v1SQMkKEg4bOMJhLCpe57CJC53OckJ-PgN9Q8Qu8IzY/edit#slide=id.g2494188471_0_18">slides</a> and demo <a target="_blank" href="https://drive.google.com/file/d/0BytmqwV9epXXVlM0WWZsYmNJUlE/view">video</a>.
+  </p>
+  <p>During a workshop in Crete, in collaboration with <a target="_blank" href="http://gerardllorach.weebly.com/">Gerard Llorach</a>, I was able to learn how to control lip-syncing of a virtual character using Javascript. These characters are powerful tools for hearing-aid testing in virtual environments. 
+  </p>
+</div> 
+
+<div class="docs-section">  
+  <h6 id="bot" class="docs-header">Simple chat bot in AIML</h6>
+  <p>
+    <a target="_blank" href="https://github.com/paulmaxus/chatbot">code</a> and 
+    <a target="_blank" href="docs/simple-chat-bot.pdf">documentation</a>.
+  </p>
+  <p>For the course "Topics in Human-Computer Interaction", I developed a simple chat bot using the Artificial Intelligence Markup Language (AIML) executable in Python.
+  </p>
+</div> 
+   
+        </div>
+        
+        <div class="include" id="shiny">
+          
+<hr>
+<center><h1 id="shiny">Interactive tools in Shiny</h1></center>
+<hr>
+
+<p>
+  I coded these mini apps in Shiny by R and they are accessible through R servers. Shiny applications are a great way of demonstrating statistics interactively.
+</p>
+
+<!--<iframe src="http://ghbtns.com/github-btn.html?user=paulmaxus&repo=shiny-apps&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+-->
+
+<div class="docs-section">  
+  <h6 class="docs-header">Linear regression</h6>
+  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/ssapp/">open app</a>: How is the optimal line fitted to my data?</p>
+</div>
+
+<div class="docs-section">  
+  <h6 id="exp" class="docs-header">Experimental design</h6>
+  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/latinapp/">open app</a>: How can the levels of my experimental variable be arranged in a Latin square design?</p>
+</div>  
+        </div>
+        
+
+      </div>
+
+    </body>
+
+</html>
