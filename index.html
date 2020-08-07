@@ -38,23 +38,14 @@
               
               <li class="navbar-item"><a class="navbar-link" href="#research">research</a></li>
               
-              <li class="navbar-item">
+              <li class="navbar-item"><a class="navbar-link" href="#projects">projects</a></li>
+              
+              <li class="navbar-item"><a class="navbar-link" href="#tools">tools</a></li>
+              
+              <!-- <li class="navbar-item">
                 <a class="navbar-link" href="#nlp">Side Projects</a>
-                <!--<a class="navbar-link" href="#" data-popover="#codeNavPopover">Side Projects</a>
-                <div id="codeNavPopover" class="popover">
-                  <ul class="popover-list">
-                    
-                    <li class="popover-item">
-                      <a class="popover-link" href="#nlp">nlp</a>
-                    </li>
-                    
-                    <li class="popover-item">
-                      <a class="popover-link" href="#shiny">shiny</a>
-                    </li>
-                    
-                  </ul>
-                </div>-->
               </li>
+              -->
             </ul>
           </div>
         </div>
@@ -62,20 +53,17 @@
         
         <div class="include" id="intro">
           
-<center>
-  <h1 class="title">Max Paulus</h1>
-  <h5>Speech and Hearing</h5>
-</center>
-
-<hr>
-
 <div class="row">
     <div class="five columns">
         <img class="u-max-full-width" src="img/ac2_orig.jpg">
     </div>
   <div class="seven columns">
+    
+    <h1 class="title">Max Paulus</h1>
+    <h5>Speech and Hearing</h5>
+
     <p>
-      I'm a researcher in Hearing Science and Technology with a background in NLP. I use physiological measures such as pupil dilation to understand how normal-hearing and hearing-impaired individuals process degraded speech. My aim is to improve assistive technologies based on my experimental findings.
+      I'm a researcher in Hearing Science and Technology with a background in NLP. I use physiological measures such as pupil dilation to understand how normal-hearing and hearing-impaired individuals process degraded speech. My goal is to improve assistive technologies such as hearing aids based on experimental findings.
     </p>
     <a target="_blank" href="https://www.linkedin.com/in/maximillian-paulus-739ba4142/">CV</a>
     |
@@ -122,16 +110,45 @@ In the following years, I stayed at Saarland University, working as research ass
         </div>
         
         <div class="include" id="research">
-          <hr>
+          
+<div class="greydiv">
+<hr>
 <center><h1>Research</h1></center>
 <hr>
+</div>
 
 <div class="docs-section">  
   
   <h6 id="current" class="docs-header">Listening effort</h6>
   
+  
   <p>
-  I currently study how humans process degraded speech using physiological tests. For instance, changes in pupil size can indicate listening effort. We work directly with hearing impaired listeners or simulate hearing loss with signal processing techniques such as noise-vocoding. Noise-vocoding simulates cochlear implants (CIs) which convey only little spectral detail. That makes it hard to track pitch or melody. Hence, the perception of music is diminished. <b>Below, you can listen to examples from different music genres and speech, and switch between the natural sound and the CI simulation.</b> You may notice that rhythmic music (e.g., Hip Hop) is easier to listen to than classical music which depends mostly on melody.
+  I currently study how listeners process degraded speech using physiological tests. For instance, changes in pupil size can indicate listening effort. As shown below, the pupil dilates when speech is played and the peak reflects the processing load associated with retrieving acoustically degraded words. 
+  </p>
+
+  <center>
+  <img id="graphsmall" src="img/speech_crop.gif">
+  <br>
+  <img id="graphnorm" src="img/pupil.gif">
+  </center>
+  
+  <hr>
+  
+  <!--
+  <div class="row">
+    <div class="four columns">
+      <img class="u-max-full-width" src="img/pupil.gif">
+    </div>
+    <div class="four columns">
+    </div>
+    <div class="four columns">
+      <img class="u-max-full-width" src="img/speech.gif">
+    </div>
+  </div>
+  -->
+  
+  <p>
+  We work directly with hearing-impaired listeners or simulate hearing loss with signal processing techniques such as noise-vocoding. This technique simulates cochlear implants (CIs) which convey only little spectral detail. That makes it hard to perceive pitch or melody. <b>Below, you can listen to examples from different music genres and speech, and switch between the natural sound and the CI simulation.</b> You may notice that rhythmic music (e.g., Hip Hop) is easier to listen to than classical music which depends mostly on melody.
   </p>
 
 <!--
@@ -157,63 +174,78 @@ In the following years, I stayed at Saarland University, working as research ass
    <div class="four columns"> 
     <div id="copyright">The Adventures of Pinocchio by Carlo Collodi, translated by Carol Della, read by Sherry Crowther; librivox.org</div>
   </div>
-  
+
 </div>
 
 </div>
+
+<hr>
 
 My research is funded by
 <img class="u-max-full-width" src="img/enrich.png">
 
-<!--
-<center>
-  <audio controls style="1px">
-    <source src="audio/vocoded.wav" type="audio/wav">
-    your browser does not support the audio!
-    </audio>
-    <center><button onclick="displaySentence()"><b>Solution</b></button></center>
-    <br style="margin-bottom: 2em">
-    <p id="sentence"></p>
-</center>
-</div>
--->
-
-<!--
-  <p>
-    How humans learn and adapt is an exciting research question. It is believed that learning follows a so called <strong>power-law</strong> function. When you start practicing, you will learn a lot in a short amount of time. But the better you get, the slower the progress.
-  </p>
-  
-  <div class="row">
-    <div class="twelve columns">
-    <div class="six columns offset-by-three">
-      <img class="u-max-full-width" src="img/power_law.png">
-    </div>
-    </div>
-  </div>
-  <p>
-  
--->
-
-<!--
-<hr>
-
-<div class="docs-section">  
-  <h6 id="inter" class="docs-header">Covert visuo-spatial attention (Università di Trento)</h6>
-  <p>
-    In simple terms, we are exploring a method that can tell us where a person is looking without actually moving her eyes!
-    Specifically, we study two brain wave components that can be obtained from electrophysiological data (i.e., electrodes attached to the scalp). The electrodes are placed symmetrically on both sides of the parieto-occipital scalp so that activation patterns of each hemisphere can be compared. If the activation is stronger on one side, it is more likely that the opposite side is attended to (decussation). Our first experiment is documented in my <a target="_blank" href="docs/colloquium.pdf">thesis defense</a>.
-  </p>  
-</div>
- 
- -->
         <!---->
         </div>
         
-        
-        
-        <div class="include" id="nlp">
-          <hr>
-<center><h1 id="nlp">Speech and Language Technology</h1></center>
+        <div class="include" id="projects">
+          
+<div class="greydiv">
+<hr>
+  <center><h1>Projects</h1></center>
+<hr>
+</div>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Hearing aids and simulated room acoustics</h6>
+  <p>Clinical study conducted at Phonak in Switzerland.
+  </p>
+  <p>
+  In collaboration with hearing-aid manufacturer Phonak, I conducted a clinical study that investigated the feasibility of pupillometry with a complex 32-loudspeaker setup. We aimed to simulate realistic room acoustics using higher-order ambisonics. Details will soon follow.
+  </p>
+</div> 
+
+<hr>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Temporally-modified speech and listening effort</h6>
+  <p><a target="_blank" href="https://www.isca-speech.org/archive/Interspeech_2019/pdfs/1402.pdf">paper</a> presented at Interspeech in Graz.
+  </p>
+  <p>
+  The second study of my PhD investigated how fast speech can impact listening effort in noise, even when intelligibility levels are comparable to slow speech. Results showed that intelligibility is indeed not the only factor determining difficulty when processing temporally-modified speech, but that cognitive effort has to be taken into account, as well.
+  </p>
+</div> 
+
+<hr>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Tinnitus: an interactive sound sculpture</h6>
+  <p><a target="_blank" href="http://bangprix.org/projects/tinnitus/">exhibited</a> at bang.Prix in Istanbul.
+  </p>
+  <p>
+  I conducted this art project with a good friend of mine, Betül Aksu, an artist from Turkey. The sculpture is a modified pillow that has been equipped with conductive thread which is connected to an Arduino microprocessor. By interacting with the pilow, visitors experience dynamically changing soundscapes that have been designed to match patient descriptions. The aim of the project is to raise awareness about the intrusiveness of tinnitus in everyday life.
+  </p>
+</div> 
+
+<hr>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Talker acoustics, intelligibility and effort</h6>
+  <p><a target="_blank" href="https://doi.org/10.1121/10.0001212">journal article</a> published in the The Journal of the Acoustical Society of America.
+  </p>
+  <p>In my first PhD study, I investigated how talkers can be classified acoustically by means of spectro-temporal features. These characteristics determine intelligibility under a range of degradations including noise and cochlear implant simulations.
+  </p>
+</div>
+
+<hr>
+
+<div class="docs-section">
+  <h6 id="char" class="docs-header">Lip-sync for virtual characters</h6>
+  <p>presentation <a target="_blank" href="https://docs.google.com/presentation/d/1v1SQMkKEg4bOMJhLCpe57CJC53OckJ-PgN9Q8Qu8IzY/edit#slide=id.g2494188471_0_18">slides</a> and demo <a target="_blank" href="https://drive.google.com/file/d/0BytmqwV9epXXVlM0WWZsYmNJUlE/view">video</a>.
+  </p>
+  <p>During a workshop in Crete, in collaboration with <a target="_blank" href="http://gerardllorach.weebly.com/">Gerard Llorach</a>, I was able to learn how to control lip-syncing of a virtual character using Javascript. These characters are powerful tools for hearing-aid testing in virtual environments. 
+  </p>
+</div> 
+
 <hr>
 
 <div class="docs-section">
@@ -224,13 +256,73 @@ My research is funded by
   </p>
 </div>
 
-<div class="docs-section">
-  <h6 id="char" class="docs-header">Lip-sync for virtual characters</h6>
-  <p>presentation <a target="_blank" href="https://docs.google.com/presentation/d/1v1SQMkKEg4bOMJhLCpe57CJC53OckJ-PgN9Q8Qu8IzY/edit#slide=id.g2494188471_0_18">slides</a> and demo <a target="_blank" href="https://drive.google.com/file/d/0BytmqwV9epXXVlM0WWZsYmNJUlE/view">video</a>.
-  </p>
-  <p>During a workshop in Crete, in collaboration with <a target="_blank" href="http://gerardllorach.weebly.com/">Gerard Llorach</a>, I was able to learn how to control lip-syncing of a virtual character using Javascript. These characters are powerful tools for hearing-aid testing in virtual environments. 
-  </p>
-</div> 
+<!--
+events = [
+          [2019,
+           [
+            ['09','A, Graz','Interspeech',
+             '<a target="_blank" href="docs/inter1.pdf">paper</a>',
+             '<a target="_blank" href="docs/inter2.pdf">poster</a>'
+            ],
+            ['09','DE, Aachen',
+             'International Congress on Acoustics',
+            ],
+            ['04','T, Istanbul','Bangprix',
+             '<a target="_blank" href="docs/eps.pdf">pictures</a>'
+            ],
+            ['03','DE, Oldenburg','Project meeting',
+             '<a target="_blank" href="docs/nijmegen.pdf">presentation</a>'
+            ],
+            ['01','BE, Ghent','Speech in noise workshop (SpiN)',
+             '<a target="_blank" href="docs/nijmegen.pdf">poster</a>'
+            ]
+           ]
+          ],
+          [2018,
+            [
+              ['09','NE, Den Haag','Project meeting'
+              ],
+              ['07','NE, University Medical Center Groningen', 
+              'Summer school on neural speech processing'
+              ],
+              ['04','UK, Leicester','Experimental Psychology Society meeting'
+              ],
+              ['03','NE, Nijmegen','Project meeting',
+              ]
+            ]
+          ],
+          [2017,
+            [
+              ['10','ES, Vitoria','Project meeting and Python training'],
+              ['07','EL, Heraklion','<a href="#char">Software project</a>, entrepreneurship in hearing technology, summer school on speech synthesis'
+              ],
+              ['04','UK, Edinburgh','Workshop on cognitive effort'
+              ]
+            ]
+          ]
+         ]
+         
+-->
+        <!---->
+        </div>
+        
+        <div class="include" id="tools">
+          
+<div class="greydiv">
+<hr>
+<center><h1 id="nlp">Tools</h1></center>
+<hr>
+</div>
+
+<div class="docs-section">  
+  <h6 id="exp" class="docs-header">Experimental design</h6>
+  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/latinapp/">open app</a>: How can the levels of my experimental variable be arranged in a Latin square design?</p>
+</div>  
+
+<div class="docs-section">  
+  <h6 class="docs-header">Linear regression</h6>
+  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/ssapp/">open app</a>: How is the optimal line fitted to my data?</p>
+</div>
 
 <div class="docs-section">  
   <h6 id="bot" class="docs-header">Simple chat bot in AIML</h6>
@@ -242,32 +334,13 @@ My research is funded by
   </p>
 </div> 
    
+        <!---->
         </div>
         
-        <div class="include" id="shiny">
-          
-<hr>
-<center><h1 id="shiny">Interactive tools in Shiny</h1></center>
-<hr>
-
-<p>
-  I coded these mini apps in Shiny by R and they are accessible through R servers. Shiny applications are a great way of demonstrating statistics interactively.
-</p>
-
-<!--<iframe src="http://ghbtns.com/github-btn.html?user=paulmaxus&repo=shiny-apps&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
--->
-
-<div class="docs-section">  
-  <h6 class="docs-header">Linear regression</h6>
-  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/ssapp/">open app</a>: How is the optimal line fitted to my data?</p>
-</div>
-
-<div class="docs-section">  
-  <h6 id="exp" class="docs-header">Experimental design</h6>
-  <p><a target="_blank" href="https://paulmaxus.shinyapps.io/latinapp/">open app</a>: How can the levels of my experimental variable be arranged in a Latin square design?</p>
-</div>  
-        </div>
         
+        <!--
+        
+        -->
 
       </div>
 
