@@ -1,0 +1,70 @@
+---
+title: "SURF Research Cloud"
+---
+
+## Estimate credits and costs
+
+```{ojs}
+//| echo: false
+//| panel: input
+
+// Create viewof inputs for interactive elements
+viewof device = Inputs.radio(["CPU", "GPU"], {
+  label: "Processing Unit",
+  value: "CPU"
+})
+
+viewof cores = Inputs.range([1, 30], {
+  label: html`${device} ${device === "CPU" ? "cores" : "devices"}`,
+  step: 1,
+  value: 2
+})
+
+viewof days = Inputs.range([1, 31], {
+  label: "Days",
+  step: 1,
+  value: 1
+})
+
+storageOptions = new Map([
+  ["5GB", 5],
+  ["10GB", 10],
+  ["50GB", 50],
+  ["100GB", 100],
+  ["250GB", 250],
+  ["500GB", 500],
+  ["1TB", 1000],
+  ["1.5TB", 1500]
+])
+
+viewof storage = Inputs.select(
+  storageOptions,
+  {
+    label: "Storage",
+    value: 500
+  }
+)
+
+```
+
+```{ojs}
+//| echo: false
+
+// Helper functions for calculations
+function getComputeCredits(unit, cores, days) {
+  const creditsPerHour = unit === "CPU" ? 1.03 : 21;
+  return cores * 24 * days * creditsPerHour;
+}
+
+function getStorageCredits(storage, days) {
+  return (storage / 1000) * (days / 31) * 681;
+}
+
+// Reactive calculations
+computeCredits = getComputeCredits(device, cores, days)
+storageCredits = getStorageCredits(storage, days)
+totalCredits = Math.ceil(computeCredits + storageCredits)
+totalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)
+
+html`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;
+```

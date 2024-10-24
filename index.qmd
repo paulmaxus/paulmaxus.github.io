@@ -1,0 +1,43 @@
+---
+title: "Research Software & Infrastructure Support"
+listing:
+    id: projects
+    contents: projects
+    template: gallery.ejs
+---
+
+## Consultation
+
+If your main focus is research, technical difficulties can sometimes be a nuisance. I can help get you started, or answer more specific questions about a technology or a piece of code.
+
+A typical request can look like this:
+
+- For my project I am interested in posts from this website, how can I get those?
+- I have a large amount of data; how can I structure it and make it accessible to my colleagues?
+- I am using this software in my study but shouldn't run it on my laptop, what are the alternatives?
+
+
+## Software projects
+
+If you have an idea for a project, but need someone to write the actual code, get in touch. Some examples:
+
+:::{#projects}
+:::
+
+
+## Cloud support
+
+Working at a Dutch university, you have various local and national options to host or run your code. I can help you with that choice, get you started, or support the entire deployment process.
+
+[Getting started](link to diagram)
+
+[SURF Research Cloud](src.qmd)
+
+[Snellius](https://github.com/paulmaxus/llama-prompt-demo)
+
+
+## Training
+
+Want to learn how to program yourself?
+
+I am a Carpentries instructor and at the UvA we regularly organize workshops, teaching programming and software management skills such as version control. I post upcoming workshops on this website:

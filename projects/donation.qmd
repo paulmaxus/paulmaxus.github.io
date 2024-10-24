@@ -1,0 +1,26 @@
+---
+title: "Data donation"
+---
+
+## What is data donation?
+
+It's a study paradigm to process digital trace data contained in so called data download packages. Users of a platform obtain these packages as part of the study via the platform itself and can "donate" them via a [software](https://github.com/d3i-infra/data-donation-task).
+
+You can read about the software in detail [here](https://d3i-infra.github.io/data-donation-task/) and about the paradigm itself [here](https://datadonation.eu/).
+
+## How much does it cost?
+
+The software can run on the SURF Research Cloud. You can use the [calculator](../src.qmd) to estimate the costs \- usually, it's not much. For the right estimate, use 2 CPU cores and the time you expect your study to run, usually around 2-3 months.
+
+## How can I help?
+
+Preparing a data donation study has two technical components:
+
+- Creating data processing scripts
+- Running the software on cloud infrastructure
+
+If you need help with any of these or want to know more about data donation in general, reach out.
+
+## Example
+
+https://paulmaxus.github.io/dd-videos/
