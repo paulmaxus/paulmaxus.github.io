@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "src.html",
+    "href": "src.html",
+    "title": "SURF Research Cloud",
+    "section": "",
+    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
+  },
+  {
+    "objectID": "src.html#estimate-credits-and-costs",
+    "href": "src.html#estimate-credits-and-costs",
+    "title": "SURF Research Cloud",
+    "section": "",
+    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
+  },
+  {
+    "objectID": "projects/processing.html#example",
+    "href": "projects/processing.html#example",
+    "title": "Data processing",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software & Infrastructure Support",
+    "section": "",
+    "text": "If your main focus is research, technical difficulties can sometimes be a nuisance. I can help get you started, or answer more specific questions about a technology or a piece of code.\nA typical request can look like this:\n\nFor my project I am interested in posts from this website, how can I get those?\nI have a large amount of data; how can I structure it and make it accessible to my colleagues?\nI am using this software in my study but shouldn’t run it on my laptop, what are the alternatives?"
+  },
+  {
+    "objectID": "index.html#consultation",
+    "href": "index.html#consultation",
+    "title": "Research Software & Infrastructure Support",
+    "section": "",
+    "text": "If your main focus is research, technical difficulties can sometimes be a nuisance. I can help get you started, or answer more specific questions about a technology or a piece of code.\nA typical request can look like this:\n\nFor my project I am interested in posts from this website, how can I get those?\nI have a large amount of data; how can I structure it and make it accessible to my colleagues?\nI am using this software in my study but shouldn’t run it on my laptop, what are the alternatives?"
+  },
+  {
+    "objectID": "index.html#software-projects",
+    "href": "index.html#software-projects",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Software projects",
+    "text": "Software projects\nIf you have an idea for a project, but need someone to write the actual code, get in touch. Some examples:\n\n\n\n    Data donation\n\n    Data processing\n\n    Web scraping\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#cloud-support",
+    "href": "index.html#cloud-support",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Cloud support",
+    "text": "Cloud support\nWorking at a Dutch university, you have various local and national options to host or run your code. I can help you with that choice, get you started, or support the entire deployment process.\nGetting started\nSURF Research Cloud\nSnellius"
+  },
+  {
+    "objectID": "index.html#training",
+    "href": "index.html#training",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Training",
+    "text": "Training\nWant to learn how to program yourself?\nI am a Carpentries instructor and at the UvA we regularly organize workshops, teaching programming and software management skills such as version control. I post upcoming workshops on this website:"
+  },
+  {
+    "objectID": "projects/donation.html",
+    "href": "projects/donation.html",
+    "title": "Data donation",
+    "section": "",
+    "text": "It’s a study paradigm to process digital trace data contained in so called data download packages. Users of a platform obtain these packages as part of the study via the platform itself and can “donate” them via a software.\nYou can read about the software in detail here and about the paradigm itself here."
+  },
+  {
+    "objectID": "projects/donation.html#what-is-data-donation",
+    "href": "projects/donation.html#what-is-data-donation",
+    "title": "Data donation",
+    "section": "",
+    "text": "It’s a study paradigm to process digital trace data contained in so called data download packages. Users of a platform obtain these packages as part of the study via the platform itself and can “donate” them via a software.\nYou can read about the software in detail here and about the paradigm itself here."
+  },
+  {
+    "objectID": "projects/donation.html#how-much-does-it-cost",
+    "href": "projects/donation.html#how-much-does-it-cost",
+    "title": "Data donation",
+    "section": "How much does it cost?",
+    "text": "How much does it cost?\nThe software can run on the SURF Research Cloud. You can use the calculator to estimate the costs - usually, it’s not much. For the right estimate, use 2 CPU cores and the time you expect your study to run, usually around 2-3 months."
+  },
+  {
+    "objectID": "projects/donation.html#how-can-i-help",
+    "href": "projects/donation.html#how-can-i-help",
+    "title": "Data donation",
+    "section": "How can I help?",
+    "text": "How can I help?\nPreparing a data donation study has two technical components:\n\nCreating data processing scripts\nRunning the software on cloud infrastructure\n\nIf you need help with any of these or want to know more about data donation in general, reach out."
+  },
+  {
+    "objectID": "projects/donation.html#example",
+    "href": "projects/donation.html#example",
+    "title": "Data donation",
+    "section": "Example",
+    "text": "Example\nhttps://paulmaxus.github.io/dd-videos/"
+  },
+  {
+    "objectID": "projects/scraping.html#example",
+    "href": "projects/scraping.html#example",
+    "title": "Web scraping",
+    "section": "Example",
+    "text": "Example"
+  }
+]
