@@ -4,4 +4,12 @@ title: "Web scraping"
 
 ## What is web scraping?
 
-## Example
+In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as [beautiful-soup](https://beautiful-soup-4.readthedocs.io/en/latest/) and browser-automation like [Selenium](https://www.selenium.dev/), APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is [requests](https://docs.python-requests.org/en/latest/index.html).
+
+## Can you scrape social media data?
+
+This can be a challenging task (depending on the scale), but it's not impossible. You might want to consider using existing tools, like [4CAT](https://4cat.nl/) which is developed at the university. We can set it up for you.
+
+## How does it look like?
+
+[Example project](https://github.com/paulmaxus/spacer)

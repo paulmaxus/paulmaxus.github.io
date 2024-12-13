@@ -1,25 +1,33 @@
 ---
 title: "Research Software & Infrastructure Support"
 listing:
-    id: projects
-    contents: projects
-    template: gallery.ejs
+    - id: projects
+      contents: projects
+      template: gallery.ejs
+    - id: cloud
+      contents: cloud
+      template: gallery.ejs
+---
+
+If your main focus is research, technical challenges can be a nuisance. We can help get you started, answer more specific questions, or (help you) develop software. Below, you can find an overview of the services we provide and some information to get you started. Contact us:
+
+**research-engineering-lab-fmg@uva.nl** (also for more hardware-related questions) 
+
+**m.paulus@uva.nl** (or contact me directly)
+
 ---
 
 ## Consultation
 
-If your main focus is research, technical difficulties can sometimes be a nuisance. I can help get you started, or answer more specific questions about a technology or a piece of code.
+A request can look like this:
 
-A typical request can look like this:
-
-- For my project I am interested in posts from this website, how can I get those?
-- I have a large amount of data; how can I structure it and make it accessible to my colleagues?
-- I am using this software in my study but shouldn't run it on my laptop, what are the alternatives?
-
+- I would like to collect data from a website but don't know where to start
+- I would like to analyse this data, but it's in a strange format
+- I am using this software but I can't run it on my laptop, what are the options?
 
 ## Software projects
 
-If you have an idea for a project, but need someone to write the actual code, get in touch. Some examples:
+If you have an idea for a project, but need help with programming, get in touch. Some examples:
 
 :::{#projects}
 :::
@@ -27,17 +35,15 @@ If you have an idea for a project, but need someone to write the actual code, ge
 
 ## Cloud support
 
-Working at a Dutch university, you have various local and national options to host or run your code. I can help you with that choice, get you started, or support the entire deployment process.
+Working at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!
 
-[Getting started](link to diagram)
-
-[SURF Research Cloud](src.qmd)
-
-[Snellius](https://github.com/paulmaxus/llama-prompt-demo)
+:::{#cloud}
+:::
 
 
 ## Training
 
 Want to learn how to program yourself?
 
-I am a Carpentries instructor and at the UvA we regularly organize workshops, teaching programming and software management skills such as version control. I post upcoming workshops on this website:
+At the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed here. If there is no workshop coming up, you can always study the material yourself, e.g. [an introduction to Python](https://swcarpentry.github.io/python-novice-gapminder/)
+

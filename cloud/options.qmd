@@ -1,0 +1,54 @@
+---
+title: Cloud options at FMG (UvA)
+---
+
+```{mermaid}
+
+flowchart LR
+
+    AP{"My Software"}
+    
+    CL1{Collaboration}
+    CL2{Collaboration?} 
+    
+    CP1{" "}
+    CP2{" "}
+    CP3{" "}
+
+    AP -- Hosting --> CL1
+    AP -- Running --> CL2
+    
+    CL1 --> CP3
+    CP3 -- CPU/GPU --> ALZ["Azure (Research IT)"]
+    CP3 -- CPU/GPU --> SRC["Research Cloud (SURF)"]
+
+    CL2 -- Yes --> CP1
+    CP1 -- CPU --> VRE["VRE (Research IT)"]
+    CP1 -- CPU/GPU --> SRC
+
+    CL2 -- No --> CP2
+    CP2 -- CPU/GPU/RAM --> SNL["Snellius (SURF)"]
+    CP2 -- CPU --> REB["FMG Research Lab"]
+
+```
+
+## Hosting an application
+
+For deploying and hosting a (web) application like [Next for data donation](../projects/donation.qmd), you can use [SURF's Research Cloud](src.qmd) or Azure via Research IT. For questions, contact us or Research IT directly: researchit@uva.nl.
+
+## Running a software/script
+
+### Individually
+
+You have many options when needing a platform to run a piece of software, like an analysis script. For computationally demanding tasks requiring only CPUs and no collaboration with others, you can request an account on the [server of the FMG Research Lab](https://www.bsl.socsci.uva.nl/aanvraag-rekenbeest-account/). 
+
+For even more demanding tasks (GPU, high-memory), you should use **Snellius**.
+The UvA has a direct contract with SURF and you can easily [request an account](https://servicedesk.surf.nl/wiki/display/WIKI/RCCS+contract). Click the link to the service desk, log in, and navigate to **Apply for access** / **Direct Institute contract**. The simplest way to access Snellius (i.e., not via the command line), is via one of the editors provided through the [ondemand service](https://ondemand.snellius.surf.nl/).
+
+### Collaborative
+
+If you need compute and would like collaborators to access the same environment, you can deploy a workspace on [SURF's Research Cloud](src.qmd). Alternatively, Research IT provides a [Virtual Research Environment (VRE)](https://medewerker.uva.nl/en/fmg/shared-content-secured/medewerkersites/uva-medewerkers/en/az/virtual-research-environment/virtual-research-environment.html).
+
+---
+
+There have been more recent developments in setting up a [European cloud service](https://open-science-cloud.ec.europa.eu/); as member of a European institution, you should be eligible for a certain amount of free credits on the platform. **As this is a new service, there have likely not been any data security and privacy assessments, yet, so the use is not recommended.**
