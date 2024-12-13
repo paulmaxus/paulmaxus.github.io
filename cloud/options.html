@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Web scraping</title>
+<title>Cloud options at FMG (UvA)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,6 +66,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="forest">
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -102,9 +106,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-web-scraping" id="toc-what-is-web-scraping" class="nav-link active" data-scroll-target="#what-is-web-scraping">What is web scraping?</a></li>
-  <li><a href="#can-you-scrape-social-media-data" id="toc-can-you-scrape-social-media-data" class="nav-link" data-scroll-target="#can-you-scrape-social-media-data">Can you scrape social media data?</a></li>
-  <li><a href="#how-does-it-look-like" id="toc-how-does-it-look-like" class="nav-link" data-scroll-target="#how-does-it-look-like">How does it look like?</a></li>
+  <li><a href="#hosting-an-application" id="toc-hosting-an-application" class="nav-link active" data-scroll-target="#hosting-an-application">Hosting an application</a></li>
+  <li><a href="#running-a-softwarescript" id="toc-running-a-softwarescript" class="nav-link" data-scroll-target="#running-a-softwarescript">Running a software/script</a>
+  <ul class="collapse">
+  <li><a href="#individually" id="toc-individually" class="nav-link" data-scroll-target="#individually">Individually</a></li>
+  <li><a href="#collaborative" id="toc-collaborative" class="nav-link" data-scroll-target="#collaborative">Collaborative</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -113,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Web scraping</h1>
+<h1 class="title">Cloud options at FMG (UvA)</h1>
 </div>
 
 
@@ -130,19 +137,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-web-scraping" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-web-scraping">What is web scraping?</h2>
-<p>In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as <a href="https://beautiful-soup-4.readthedocs.io/en/latest/">beautiful-soup</a> and browser-automation like <a href="https://www.selenium.dev/">Selenium</a>, APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is <a href="https://docs.python-requests.org/en/latest/index.html">requests</a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+    AP{"My Software"}
+    
+    CL1{Collaboration}
+    CL2{Collaboration?} 
+    
+    CP1{" "}
+    CP2{" "}
+    CP3{" "}
+
+    AP -- Hosting --&gt; CL1
+    AP -- Running --&gt; CL2
+    
+    CL1 --&gt; CP3
+    CP3 -- CPU/GPU --&gt; ALZ["Azure (Research IT)"]
+    CP3 -- CPU/GPU --&gt; SRC["Research Cloud (SURF)"]
+
+    CL2 -- Yes --&gt; CP1
+    CP1 -- CPU --&gt; VRE["VRE (Research IT)"]
+    CP1 -- CPU/GPU --&gt; SRC
+
+    CL2 -- No --&gt; CP2
+    CP2 -- CPU/GPU/RAM --&gt; SNL["Snellius (SURF)"]
+    CP2 -- CPU --&gt; REB["FMG Research Lab"]
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="hosting-an-application" class="level2">
+<h2 class="anchored" data-anchor-id="hosting-an-application">Hosting an application</h2>
+<p>For deploying and hosting a (web) application like <a href="../projects/donation.html">Next for data donation</a>, you can use <a href="../cloud/src.html">SURF’s Research Cloud</a> or Azure via Research IT. For questions, contact us or Research IT directly: researchit@uva.nl.</p>
 </section>
-<section id="can-you-scrape-social-media-data" class="level2">
-<h2 class="anchored" data-anchor-id="can-you-scrape-social-media-data">Can you scrape social media data?</h2>
-<p>This can be a challenging task (depending on the scale), but it’s not impossible. You might want to consider using existing tools, like <a href="https://4cat.nl/">4CAT</a> which is developed at the university. We can set it up for you.</p>
+<section id="running-a-softwarescript" class="level2">
+<h2 class="anchored" data-anchor-id="running-a-softwarescript">Running a software/script</h2>
+<section id="individually" class="level3">
+<h3 class="anchored" data-anchor-id="individually">Individually</h3>
+<p>You have many options when needing a platform to run a piece of software, like an analysis script. For computationally demanding tasks requiring only CPUs and no collaboration with others, you can request an account on the <a href="https://www.bsl.socsci.uva.nl/aanvraag-rekenbeest-account/">server of the FMG Research Lab</a>.</p>
+<p>For even more demanding tasks (GPU, high-memory), you should use <strong>Snellius</strong>. The UvA has a direct contract with SURF and you can easily <a href="https://servicedesk.surf.nl/wiki/display/WIKI/RCCS+contract">request an account</a>. Click the link to the service desk, log in, and navigate to <strong>Apply for access</strong> / <strong>Direct Institute contract</strong>. The simplest way to access Snellius (i.e., not via the command line), is via one of the editors provided through the <a href="https://ondemand.snellius.surf.nl/">ondemand service</a>.</p>
 </section>
-<section id="how-does-it-look-like" class="level2">
-<h2 class="anchored" data-anchor-id="how-does-it-look-like">How does it look like?</h2>
-<p><a href="https://github.com/paulmaxus/spacer">Example project</a></p>
+<section id="collaborative" class="level3">
+<h3 class="anchored" data-anchor-id="collaborative">Collaborative</h3>
+<p>If you need compute and would like collaborators to access the same environment, you can deploy a workspace on <a href="../cloud/src.html">SURF’s Research Cloud</a>. Alternatively, Research IT provides a <a href="https://medewerker.uva.nl/en/fmg/shared-content-secured/medewerkersites/uva-medewerkers/en/az/virtual-research-environment/virtual-research-environment.html">Virtual Research Environment (VRE)</a>.</p>
+<hr>
+<p>There have been more recent developments in setting up a <a href="https://open-science-cloud.ec.europa.eu/">European cloud service</a>; as member of a European institution, you should be eligible for a certain amount of free credits on the platform. <strong>As this is a new service, there have likely not been any data security and privacy assessments, yet, so the use is not recommended.</strong></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

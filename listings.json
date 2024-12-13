@@ -4,7 +4,9 @@
     "items": [
       "/projects/donation.html",
       "/projects/processing.html",
-      "/projects/scraping.html"
+      "/projects/scraping.html",
+      "/cloud/options.html",
+      "/cloud/src.html"
     ]
   }
 ]

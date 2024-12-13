@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research Software &amp; Infrastructure Support – Max Paulus</title>
+<title>Research Software &amp; Infrastructure Support</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-659650fc26dc25888fc1474f317bb8ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -96,6 +96,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-cloud .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-language','listing-title','listing-path','listing-outputHref','listing-author','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-title","listing-path","listing-outputHref","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-cloud'] = new List('listing-cloud', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -136,11 +164,6 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Max Paulus</span>
-    </a>
-  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -150,10 +173,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./src.html"> 
-<span class="menu-text">SRC</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -200,19 +219,22 @@ window.Quarto = {
 </header>
 
 
+<p>If your main focus is research, technical challenges can be a nuisance. We can help get you started, answer more specific questions, or (help you) develop software. Below, you can find an overview of the services we provide and some information to get you started. Contact us:</p>
+<p><strong>research-engineering-lab-fmg@uva.nl</strong> (also for more hardware-related questions)</p>
+<p><strong>m.paulus@uva.nl</strong> (or contact me directly)</p>
+<hr>
 <section id="consultation" class="level2">
 <h2 class="anchored" data-anchor-id="consultation">Consultation</h2>
-<p>If your main focus is research, technical difficulties can sometimes be a nuisance. I can help get you started, or answer more specific questions about a technology or a piece of code.</p>
-<p>A typical request can look like this:</p>
+<p>A request can look like this:</p>
 <ul>
-<li>For my project I am interested in posts from this website, how can I get those?</li>
-<li>I have a large amount of data; how can I structure it and make it accessible to my colleagues?</li>
-<li>I am using this software in my study but shouldn’t run it on my laptop, what are the alternatives?</li>
+<li>I would like to collect data from a website but don’t know where to start</li>
+<li>I would like to analyse this data, but it’s in a strange format</li>
+<li>I am using this software but I can’t run it on my laptop, what are the options?</li>
 </ul>
 </section>
 <section id="software-projects" class="level2">
 <h2 class="anchored" data-anchor-id="software-projects">Software projects</h2>
-<p>If you have an idea for a project, but need someone to write the actual code, get in touch. Some examples:</p>
+<p>If you have an idea for a project, but need help with programming, get in touch. Some examples:</p>
 <div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
 <ul>
 
@@ -230,15 +252,24 @@ No matching items
 </section>
 <section id="cloud-support" class="level2">
 <h2 class="anchored" data-anchor-id="cloud-support">Cloud support</h2>
-<p>Working at a Dutch university, you have various local and national options to host or run your code. I can help you with that choice, get you started, or support the entire deployment process.</p>
-<p><a href="link to diagram">Getting started</a></p>
-<p><a href="./src.html">SURF Research Cloud</a></p>
-<p><a href="https://github.com/paulmaxus/llama-prompt-demo">Snellius</a></p>
+<p>Working at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!</p>
+<div id="listing-cloud" class="quarto-listing quarto-listing-container-custom">
+<ul>
+
+    <li><a href="./cloud/options.html">Cloud options at FMG (UvA)</a></li>
+
+    <li><a href="./cloud/src.html">SURF Research Cloud</a></li>
+
+</ul>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="training" class="level2">
 <h2 class="anchored" data-anchor-id="training">Training</h2>
 <p>Want to learn how to program yourself?</p>
-<p>I am a Carpentries instructor and at the UvA we regularly organize workshops, teaching programming and software management skills such as version control. I post upcoming workshops on this website:</p>
+<p>At the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed here. If there is no workshop coming up, you can always study the material yourself, e.g.&nbsp;<a href="https://swcarpentry.github.io/python-novice-gapminder/">an introduction to Python</a></p>
 
 
 
@@ -327,8 +358,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -439,7 +468,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
