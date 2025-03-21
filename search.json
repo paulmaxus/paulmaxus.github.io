@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Research Software & Infrastructure Support",
-    "section": "",
-    "text": "If your main focus is research, technical challenges can be a nuisance. We can help get you started, answer more specific questions, or (help you) develop software. Below, you can find an overview of the services we provide and some information to get you started. Contact us:\nresearch-engineering-lab-fmg@uva.nl (also for more hardware-related questions)\nm.paulus@uva.nl (or contact me directly)"
-  },
-  {
-    "objectID": "index.html#consultation",
-    "href": "index.html#consultation",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Consultation",
-    "text": "Consultation\nA request can look like this:\n\nI would like to collect data from a website but don’t know where to start\nI would like to analyse this data, but it’s in a strange format\nI am using this software but I can’t run it on my laptop, what are the options?"
-  },
-  {
-    "objectID": "index.html#software-projects",
-    "href": "index.html#software-projects",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Software projects",
-    "text": "Software projects\nIf you have an idea for a project, but need help with programming, get in touch. Some examples:\n\n\n\n    Data donation\n\n    Data processing\n\n    Web scraping\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#cloud-support",
-    "href": "index.html#cloud-support",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Cloud support",
-    "text": "Cloud support\nWorking at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!\n\n\n\n    Cloud options at FMG (UvA)\n\n    SURF Research Cloud\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#training",
-    "href": "index.html#training",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Training",
-    "text": "Training\nWant to learn how to program yourself?\nAt the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed here. If there is no workshop coming up, you can always study the material yourself, e.g. an introduction to Python"
-  },
-  {
     "objectID": "cloud/options.html",
     "href": "cloud/options.html",
     "title": "Cloud options at FMG (UvA)",
@@ -84,25 +49,81 @@
     "text": "How does it look like?\nExample project"
   },
   {
+    "objectID": "projects/social.html",
+    "href": "projects/social.html",
+    "title": "Social media research",
+    "section": "",
+    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
+  },
+  {
+    "objectID": "projects/social.html#data-donation",
+    "href": "projects/social.html#data-donation",
+    "title": "Social media research",
+    "section": "",
+    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
+  },
+  {
+    "objectID": "projects/social.html#web-scraping",
+    "href": "projects/social.html#web-scraping",
+    "title": "Social media research",
+    "section": "Web scraping",
+    "text": "Web scraping\n\nConsultation: available tools, data\nAssessing libraries and platforms\nInfrastructure\n(Building custom scraper)"
+  },
+  {
+    "objectID": "projects/social.html#data-processing",
+    "href": "projects/social.html#data-processing",
+    "title": "Social media research",
+    "section": "Data processing",
+    "text": "Data processing\n\nLarge datasets (HPC): Snellius / Research Cloud"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software & Infrastructure Support",
+    "section": "",
+    "text": "These pages contain additional materials, examples and guides related to the Research Engineering service for researchers at the Faculty of Social and Behavioural Sciences (FMG) at the University of Amsterdam.\nConsult our website first to learn more about research engineering at FMG."
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Software",
+    "text": "Software\nWe provide support for research software in the social and behavioural sciences domain. You’ll find additional information about some of the research topics below.\n\n\n\n    Data donation\n\n    Data processing\n\n    Social media research\n\n    Web scraping\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#cloud",
+    "href": "index.html#cloud",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Cloud",
+    "text": "Cloud\nWorking at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!\n\n\n\n    Cloud options at FMG (UvA)\n\n    SURF Research Cloud\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#training",
+    "href": "index.html#training",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Training",
+    "text": "Training\nWant to learn how to program yourself?\nAt the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed on the events page of the Data Science Center. If there is no workshop coming up, you can always study the material yourself, e.g. an introduction to Python"
+  },
+  {
     "objectID": "projects/processing.html",
     "href": "projects/processing.html",
     "title": "Data processing",
     "section": "",
-    "text": "This is probably the project type with the broadest definition. Any study that involves data (usually quantitative) requires some form of data processing. A Python libary that is often used for this is pandas, or dplyr for R.\nWhile data processing can seem straightforward (e.g. changing a column name), things can get very messy quite easily, think of duplicates, missing values, wrong data types and so on. A clean, reproducible data processing pipeline is therefore essential for research."
+    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
   },
   {
     "objectID": "projects/processing.html#what-is-data-processing",
     "href": "projects/processing.html#what-is-data-processing",
     "title": "Data processing",
     "section": "",
-    "text": "This is probably the project type with the broadest definition. Any study that involves data (usually quantitative) requires some form of data processing. A Python libary that is often used for this is pandas, or dplyr for R.\nWhile data processing can seem straightforward (e.g. changing a column name), things can get very messy quite easily, think of duplicates, missing values, wrong data types and so on. A clean, reproducible data processing pipeline is therefore essential for research."
+    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
   },
   {
     "objectID": "projects/processing.html#data-processing-on-the-cloud",
     "href": "projects/processing.html#data-processing-on-the-cloud",
     "title": "Data processing",
     "section": "Data processing on the cloud",
-    "text": "Data processing on the cloud\nProbably every social scientists said this at some point: “I left my laptop running over night”. When that happens once, fine, but when it happens regularly, that you cannot use your laptop because you’re processing data? Then it’s time to think about cloud solutions."
+    "text": "Data processing on the cloud\nProbably every social scientists said this at some point: “I left my laptop running over night”. When that happens once, fine, but when it happens regularly, it’s time to think about cloud solutions."
   },
   {
     "objectID": "projects/processing.html#how-does-it-look-like",
