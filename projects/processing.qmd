@@ -4,13 +4,12 @@ title: "Data processing"
 
 ## What is data processing?
 
-This is probably the project type with the broadest definition. Any study that involves data (usually quantitative) requires some form of data processing. A Python libary that is often used for this is [pandas](https://pandas.pydata.org/), or [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) for R.
-
-While data processing can seem straightforward (e.g. changing a column name), things can get very messy quite easily, think of duplicates, missing values, wrong data types and so on. A clean, reproducible data processing pipeline is therefore essential for research.
+Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is [pandas](https://pandas.pydata.org/), or [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) for R.
+While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the [Data Wrangler](https://the-turing-way.netlify.app/collaboration/research-infrastructure-roles/data-wrangler).
 
 ## Data processing on the cloud
 
-Probably every social scientists said this at some point: "I left my laptop running over night". When that happens once, fine, but when it happens regularly, that you cannot use your laptop because you're processing data? Then it's time to think about [cloud solutions](../cloud/options.qmd).
+Probably every social scientists said this at some point: "I left my laptop running over night". When that happens once, fine, but when it happens regularly, it's time to think about [cloud solutions](../cloud/options.qmd).
 
 ## How does it look like?
 

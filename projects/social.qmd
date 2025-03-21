@@ -1,0 +1,22 @@
+---
+title: "Social media research"
+---
+
+## Data donation
+
+[What is data donation?](donation.qmd)
+
+- Extraction scripts
+- Infrastructure: [Research Cloud](../cloud/options.qmd)
+
+## Web scraping
+
+- Consultation: available tools, data
+- Assessing libraries and platforms
+- Infrastructure
+- (Building custom scraper)
+
+## Data processing
+
+- Large datasets (HPC): [Snellius / Research Cloud](../cloud/options.qmd)
+

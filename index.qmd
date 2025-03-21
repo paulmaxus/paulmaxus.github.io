@@ -9,31 +9,20 @@ listing:
       template: gallery.ejs
 ---
 
-If your main focus is research, technical challenges can be a nuisance. We can help get you started, answer more specific questions, or (help you) develop software. Below, you can find an overview of the services we provide and some information to get you started. Contact us:
+These pages contain additional materials, examples and guides related to the [Research Engineering](https://www.bsl.socsci.uva.nl/research-engineering/) service for researchers at the Faculty of Social and Behavioural Sciences (FMG) at the University of Amsterdam.
 
-**research-engineering-lab-fmg@uva.nl** (also for more hardware-related questions) 
+Consult our website first to learn more about research engineering at FMG.
 
-**m.paulus@uva.nl** (or contact me directly)
+## Software
 
----
-
-## Consultation
-
-A request can look like this:
-
-- I would like to collect data from a website but don't know where to start
-- I would like to analyse this data, but it's in a strange format
-- I am using this software but I can't run it on my laptop, what are the options?
-
-## Software projects
-
-If you have an idea for a project, but need help with programming, get in touch. Some examples:
+We provide support for research software in the social and behavioural sciences domain. 
+You'll find additional information about some of the research topics below.
 
 :::{#projects}
 :::
 
 
-## Cloud support
+## Cloud
 
 Working at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!
 
@@ -45,5 +34,6 @@ Working at a Dutch university, you have various local and national options to ho
 
 Want to learn how to program yourself?
 
-At the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed here. If there is no workshop coming up, you can always study the material yourself, e.g. [an introduction to Python](https://swcarpentry.github.io/python-novice-gapminder/)
+At the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed on the [events page of the Data Science Center](https://dsc.uva.nl/events/events.html). 
+If there is no workshop coming up, you can always study the material yourself, e.g. [an introduction to Python](https://swcarpentry.github.io/python-novice-gapminder/)
 
