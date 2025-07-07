@@ -1,136 +1,17 @@
 [
   {
-    "objectID": "cloud/options.html",
-    "href": "cloud/options.html",
-    "title": "Cloud options at FMG (UvA)",
+    "objectID": "cloud/src.html",
+    "href": "cloud/src.html",
+    "title": "SURF Research Cloud",
     "section": "",
-    "text": "flowchart LR\n\n    AP{\"My Software\"}\n    \n    CL1{Collaboration}\n    CL2{Collaboration?} \n    \n    CP1{\" \"}\n    CP2{\" \"}\n    CP3{\" \"}\n\n    AP -- Hosting --&gt; CL1\n    AP -- Running --&gt; CL2\n    \n    CL1 --&gt; CP3\n    CP3 -- CPU/GPU --&gt; ALZ[\"Azure (Research IT)\"]\n    CP3 -- CPU/GPU --&gt; SRC[\"Research Cloud (SURF)\"]\n\n    CL2 -- Yes --&gt; CP1\n    CP1 -- CPU --&gt; VRE[\"VRE (Research IT)\"]\n    CP1 -- CPU/GPU --&gt; SRC\n\n    CL2 -- No --&gt; CP2\n    CP2 -- CPU/GPU/RAM --&gt; SNL[\"Snellius (SURF)\"]\n    CP2 -- CPU --&gt; REB[\"FMG Research Lab\"]"
+    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
   },
   {
-    "objectID": "cloud/options.html#hosting-an-application",
-    "href": "cloud/options.html#hosting-an-application",
-    "title": "Cloud options at FMG (UvA)",
-    "section": "Hosting an application",
-    "text": "Hosting an application\nFor deploying and hosting a (web) application like Next for data donation, you can use SURF’s Research Cloud or Azure via Research IT. For questions, contact us or Research IT directly: researchit@uva.nl."
-  },
-  {
-    "objectID": "cloud/options.html#running-a-softwarescript",
-    "href": "cloud/options.html#running-a-softwarescript",
-    "title": "Cloud options at FMG (UvA)",
-    "section": "Running a software/script",
-    "text": "Running a software/script\n\nIndividually\nYou have many options when needing a platform to run a piece of software, like an analysis script. For computationally demanding tasks requiring only CPUs and no collaboration with others, you can request an account on the server of the FMG Research Lab.\nFor even more demanding tasks (GPU, high-memory), you should use Snellius. The UvA has a direct contract with SURF and you can easily request an account. Click the link to the service desk, log in, and navigate to Apply for access / Direct Institute contract. The simplest way to access Snellius (i.e., not via the command line), is via one of the editors provided through the ondemand service.\n\n\nCollaborative\nIf you need compute and would like collaborators to access the same environment, you can deploy a workspace on SURF’s Research Cloud. Alternatively, Research IT provides a Virtual Research Environment (VRE).\n\nThere have been more recent developments in setting up a European cloud service; as member of a European institution, you should be eligible for a certain amount of free credits on the platform. As this is a new service, there have likely not been any data security and privacy assessments, yet, so the use is not recommended."
-  },
-  {
-    "objectID": "projects/scraping.html",
-    "href": "projects/scraping.html",
-    "title": "Web scraping",
+    "objectID": "cloud/src.html#estimate-credits-and-costs",
+    "href": "cloud/src.html#estimate-credits-and-costs",
+    "title": "SURF Research Cloud",
     "section": "",
-    "text": "In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as beautiful-soup and browser-automation like Selenium, APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is requests."
-  },
-  {
-    "objectID": "projects/scraping.html#what-is-web-scraping",
-    "href": "projects/scraping.html#what-is-web-scraping",
-    "title": "Web scraping",
-    "section": "",
-    "text": "In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as beautiful-soup and browser-automation like Selenium, APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is requests."
-  },
-  {
-    "objectID": "projects/scraping.html#can-you-scrape-social-media-data",
-    "href": "projects/scraping.html#can-you-scrape-social-media-data",
-    "title": "Web scraping",
-    "section": "Can you scrape social media data?",
-    "text": "Can you scrape social media data?\nThis can be a challenging task (depending on the scale), but it’s not impossible. You might want to consider using existing tools, like 4CAT which is developed at the university. We can set it up for you."
-  },
-  {
-    "objectID": "projects/scraping.html#how-does-it-look-like",
-    "href": "projects/scraping.html#how-does-it-look-like",
-    "title": "Web scraping",
-    "section": "How does it look like?",
-    "text": "How does it look like?\nExample project"
-  },
-  {
-    "objectID": "projects/social.html",
-    "href": "projects/social.html",
-    "title": "Social media research",
-    "section": "",
-    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
-  },
-  {
-    "objectID": "projects/social.html#data-donation",
-    "href": "projects/social.html#data-donation",
-    "title": "Social media research",
-    "section": "",
-    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
-  },
-  {
-    "objectID": "projects/social.html#web-scraping",
-    "href": "projects/social.html#web-scraping",
-    "title": "Social media research",
-    "section": "Web scraping",
-    "text": "Web scraping\n\nConsultation: available tools, data\nAssessing libraries and platforms\nInfrastructure\n(Building custom scraper)"
-  },
-  {
-    "objectID": "projects/social.html#data-processing",
-    "href": "projects/social.html#data-processing",
-    "title": "Social media research",
-    "section": "Data processing",
-    "text": "Data processing\n\nLarge datasets (HPC): Snellius / Research Cloud"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Research Software & Infrastructure Support",
-    "section": "",
-    "text": "These pages contain additional materials, examples and guides related to the Research Engineering service for researchers at the Faculty of Social and Behavioural Sciences (FMG) at the University of Amsterdam.\nConsult our website first to learn more about research engineering at FMG."
-  },
-  {
-    "objectID": "index.html#software",
-    "href": "index.html#software",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Software",
-    "text": "Software\nWe provide support for research software in the social and behavioural sciences domain. You’ll find additional information about some of the research topics below.\n\n\n\n    Data donation\n\n    Data processing\n\n    Social media research\n\n    Web scraping\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#cloud",
-    "href": "index.html#cloud",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Cloud",
-    "text": "Cloud\nWorking at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!\n\n\n\n    Cloud options at FMG (UvA)\n\n    SURF Research Cloud\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#training",
-    "href": "index.html#training",
-    "title": "Research Software & Infrastructure Support",
-    "section": "Training",
-    "text": "Training\nWant to learn how to program yourself?\nAt the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed on the events page of the Data Science Center. If there is no workshop coming up, you can always study the material yourself, e.g. an introduction to Python"
-  },
-  {
-    "objectID": "projects/processing.html",
-    "href": "projects/processing.html",
-    "title": "Data processing",
-    "section": "",
-    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
-  },
-  {
-    "objectID": "projects/processing.html#what-is-data-processing",
-    "href": "projects/processing.html#what-is-data-processing",
-    "title": "Data processing",
-    "section": "",
-    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
-  },
-  {
-    "objectID": "projects/processing.html#data-processing-on-the-cloud",
-    "href": "projects/processing.html#data-processing-on-the-cloud",
-    "title": "Data processing",
-    "section": "Data processing on the cloud",
-    "text": "Data processing on the cloud\nProbably every social scientists said this at some point: “I left my laptop running over night”. When that happens once, fine, but when it happens regularly, it’s time to think about cloud solutions."
-  },
-  {
-    "objectID": "projects/processing.html#how-does-it-look-like",
-    "href": "projects/processing.html#how-does-it-look-like",
-    "title": "Data processing",
-    "section": "How does it look like?",
-    "text": "How does it look like?\nExample project"
+    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
   },
   {
     "objectID": "projects/donation.html",
@@ -168,17 +49,136 @@
     "text": "How does it look like?\nExample project"
   },
   {
-    "objectID": "cloud/src.html",
-    "href": "cloud/src.html",
-    "title": "SURF Research Cloud",
+    "objectID": "projects/scraping.html",
+    "href": "projects/scraping.html",
+    "title": "Web scraping",
     "section": "",
-    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
+    "text": "In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as beautiful-soup and browser-automation like Selenium, APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is requests."
   },
   {
-    "objectID": "cloud/src.html#estimate-credits-and-costs",
-    "href": "cloud/src.html#estimate-credits-and-costs",
-    "title": "SURF Research Cloud",
+    "objectID": "projects/scraping.html#what-is-web-scraping",
+    "href": "projects/scraping.html#what-is-web-scraping",
+    "title": "Web scraping",
     "section": "",
-    "text": "viewof device = Inputs.radio([\"CPU\", \"GPU\"], {\n  label: \"Processing Unit\",\n  value: \"CPU\"\n})\n\nviewof cores = Inputs.range([1, 30], {\n  label: html`${device} ${device === \"CPU\" ? \"cores\" : \"devices\"}`,\n  step: 1,\n  value: 2\n})\n\nviewof days = Inputs.range([1, 31], {\n  label: \"Days\",\n  step: 1,\n  value: 1\n})\n\nstorageOptions = new Map([\n  [\"5GB\", 5],\n  [\"10GB\", 10],\n  [\"50GB\", 50],\n  [\"100GB\", 100],\n  [\"250GB\", 250],\n  [\"500GB\", 500],\n  [\"1TB\", 1000],\n  [\"1.5TB\", 1500]\n])\n\nviewof storage = Inputs.select(\n  storageOptions,\n  {\n    label: \"Storage\",\n    value: 500\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction getComputeCredits(unit, cores, days) {\n  const creditsPerHour = unit === \"CPU\" ? 1.03 : 21;\n  return cores * 24 * days * creditsPerHour;\n}\n\nfunction getStorageCredits(storage, days) {\n  return (storage / 1000) * (days / 31) * 681;\n}\n\n// Reactive calculations\ncomputeCredits = getComputeCredits(device, cores, days)\nstorageCredits = getStorageCredits(storage, days)\ntotalCredits = Math.ceil(computeCredits + storageCredits)\ntotalCosts = Math.ceil((computeCredits + storageCredits) / 1000 * 35.43)\n\nhtml`Estimated credits: ${totalCredits}, costs: ${totalCosts} €.`;"
+    "text": "In my experience, there is often confusion about scraping on the one hand, and APIs (application programming interfaces) on the other. While scraping means literally scraping data from an html page using popular tools such as beautiful-soup and browser-automation like Selenium, APIs are intentionally made so that you, the user and researcher, can obtain data in an official (and usually more structured and simple) way. A Python library that is commonly used for this is requests."
+  },
+  {
+    "objectID": "projects/scraping.html#can-you-scrape-social-media-data",
+    "href": "projects/scraping.html#can-you-scrape-social-media-data",
+    "title": "Web scraping",
+    "section": "Can you scrape social media data?",
+    "text": "Can you scrape social media data?\nThis can be a challenging task (depending on the scale), but it’s not impossible. You might want to consider using existing tools, like 4CAT which is developed at the university. We can set it up for you."
+  },
+  {
+    "objectID": "projects/scraping.html#how-does-it-look-like",
+    "href": "projects/scraping.html#how-does-it-look-like",
+    "title": "Web scraping",
+    "section": "How does it look like?",
+    "text": "How does it look like?\nExample project"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software & Infrastructure Support",
+    "section": "",
+    "text": "These pages contain additional materials, examples and guides related to the Research Engineering service for researchers at the Faculty of Social and Behavioural Sciences (FMG) at the University of Amsterdam.\nConsult our website first to learn more about research engineering at FMG."
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Software",
+    "text": "Software\nWe provide support for research software in the social and behavioural sciences domain. You’ll find additional information about some of the research topics below.\n\n\n\n    Data donation\n\n    Data processing\n\n    Social media research\n\n    Web scraping\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#cloud",
+    "href": "index.html#cloud",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Cloud",
+    "text": "Cloud\nWorking at a Dutch university, you have various local and national options to host or run your code. Below, you find some introductory information. If you have more questions, reach out!\n\n\n\n    Cloud options at FMG (UvA)\n\n    SURF Research Cloud\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#training",
+    "href": "index.html#training",
+    "title": "Research Software & Infrastructure Support",
+    "section": "Training",
+    "text": "Training\nWant to learn how to program yourself?\nAt the UvA, we regularly organize workshops in which we teach programming and software management skills such as version control. The events will be listed on the events page of the Data Science Center. If there is no workshop coming up, you can always study the material yourself, e.g. an introduction to Python"
+  },
+  {
+    "objectID": "projects/processing.html",
+    "href": "projects/processing.html",
+    "title": "Data processing",
+    "section": "",
+    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
+  },
+  {
+    "objectID": "projects/processing.html#what-is-data-processing",
+    "href": "projects/processing.html#what-is-data-processing",
+    "title": "Data processing",
+    "section": "",
+    "text": "Any study that involves data (usually quantitative) requires some form of data processing. A Python library that is often used for this is pandas, or dplyr for R. While data processing may seem like a straightforward task (e.g. changing a column name), things can get quite complicated; think of duplicates, missing values, wrong data types, and large datasets. A clean, reproducible data processing pipeline is an essential part of quality research. The Turing Way Community even has its own job title for this, the Data Wrangler."
+  },
+  {
+    "objectID": "projects/processing.html#data-processing-on-the-cloud",
+    "href": "projects/processing.html#data-processing-on-the-cloud",
+    "title": "Data processing",
+    "section": "Data processing on the cloud",
+    "text": "Data processing on the cloud\nProbably every social scientists said this at some point: “I left my laptop running over night”. When that happens once, fine, but when it happens regularly, it’s time to think about cloud solutions."
+  },
+  {
+    "objectID": "projects/processing.html#how-does-it-look-like",
+    "href": "projects/processing.html#how-does-it-look-like",
+    "title": "Data processing",
+    "section": "How does it look like?",
+    "text": "How does it look like?\nExample project"
+  },
+  {
+    "objectID": "projects/social.html",
+    "href": "projects/social.html",
+    "title": "Social media research",
+    "section": "",
+    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
+  },
+  {
+    "objectID": "projects/social.html#data-donation",
+    "href": "projects/social.html#data-donation",
+    "title": "Social media research",
+    "section": "",
+    "text": "What is data donation?\n\nExtraction scripts\nInfrastructure: Research Cloud"
+  },
+  {
+    "objectID": "projects/social.html#web-scraping",
+    "href": "projects/social.html#web-scraping",
+    "title": "Social media research",
+    "section": "Web scraping",
+    "text": "Web scraping\n\nConsultation: available tools, data\nAssessing libraries and platforms\nInfrastructure\n(Building custom scraper)"
+  },
+  {
+    "objectID": "projects/social.html#data-processing",
+    "href": "projects/social.html#data-processing",
+    "title": "Social media research",
+    "section": "Data processing",
+    "text": "Data processing\n\nLarge datasets (HPC): Snellius / Research Cloud"
+  },
+  {
+    "objectID": "cloud/options.html",
+    "href": "cloud/options.html",
+    "title": "Cloud options at FMG (UvA)",
+    "section": "",
+    "text": "flowchart LR\n\n    AP{\"My Software\"}\n    \n    CL1{Collaboration}\n    CL2{Collaboration?} \n    \n    CP1{\" \"}\n    CP2{\" \"}\n    CP3{\" \"}\n\n    AP -- Hosting --&gt; CL1\n    AP -- Running --&gt; CL2\n    \n    CL1 --&gt; CP3\n    CP3 -- CPU/GPU --&gt; ALZ[\"Azure (Research IT)\"]\n    CP3 -- CPU/GPU --&gt; SRC[\"Research Cloud (SURF)\"]\n\n    CL2 -- Yes --&gt; CP1\n    CP1 -- CPU --&gt; VRE[\"VRE (Research IT)\"]\n    CP1 -- CPU/GPU --&gt; SRC\n\n    CL2 -- No --&gt; CP2\n    CP2 -- CPU/GPU/RAM --&gt; SNL[\"Snellius (SURF)\"]\n    CP2 -- CPU --&gt; REB[\"FMG Research Lab\"]"
+  },
+  {
+    "objectID": "cloud/options.html#hosting-an-application",
+    "href": "cloud/options.html#hosting-an-application",
+    "title": "Cloud options at FMG (UvA)",
+    "section": "Hosting an application",
+    "text": "Hosting an application\nFor deploying and hosting a (web) application like Next for data donation, you can use SURF’s Research Cloud or Azure via Research IT. For questions, contact us or Research IT directly: researchit@uva.nl."
+  },
+  {
+    "objectID": "cloud/options.html#running-a-softwarescript",
+    "href": "cloud/options.html#running-a-softwarescript",
+    "title": "Cloud options at FMG (UvA)",
+    "section": "Running a software/script",
+    "text": "Running a software/script\n\nIndividually\nYou have many options when needing a platform to run a piece of software, like an analysis script. For computationally demanding tasks requiring only CPUs and no collaboration with others, you can request an account on the server of the FMG Research Lab.\nFor even more demanding tasks (GPU, high-memory), you should use Snellius. The UvA has a direct contract with SURF and you can easily request an account. Click the link to the service desk, log in, and navigate to Apply for access / Direct Institute contract. The simplest way to access Snellius (i.e., not via the command line), is via one of the editors provided through the ondemand service.\n\n\nCollaborative\nIf you need compute and would like collaborators to access the same environment, you can deploy a workspace on SURF’s Research Cloud. Alternatively, Research IT provides a Virtual Research Environment (VRE).\n\nThere have been more recent developments in setting up a European cloud service; as member of a European institution, you should be eligible for a certain amount of free credits on the platform. As this is a new service, there have likely not been any data security and privacy assessments, yet, so the use is not recommended."
   }
 ]
