@@ -1,0 +1,16 @@
+content:
+  - name: home
+    label: Home
+    type: file
+    path: index.qmd
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - name: listing
+        label: Lists
+        type: object
+        list: true
+        fields:
+          - { name: id, label: id, type: string }
+          - { name: contents, label: folder, type: string }
+          - { name: template, label: ejs file, type: string }
+      - { name: body, label: Body, type: rich-text }
